@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-md navbar-light py-0" style="background-color: #29e499;">
+    <div class="container">
+
+        <a class="navbar-brand" href="#">
+            <img src="/assets/logo.png" alt="Logo" width="50" height="50">
+        </a>
+
+        
+
+        <div class="navbar-text ml-auto">
+            <button type="button" class="btn  btn-login mx-2" (click)="redirectToLogin()" *ngIf="tip == 'guest'">Log In</button>
+            <button type="button" class="btn  btn-register mx-2" (click)="redirectToSignUp()" *ngIf="tip == 'guest'">Sign Up</button>
+
+            <button type="button" class="btn   btn-login mx-2" (click)="redirectProfil()" *ngIf="tip == 'user' || tip=='lekar'">Profil</button>
+            <button type="button" class="btn   btn-login mx-2" (click)="prebaciNaLekare('naslov')" *ngIf="tip == 'user' ">Lekari</button>
+            <button type="button" class="btn   btn-login mx-2" (click)="prebaciNaPreglede()" *ngIf="tip == 'user' ">Pregledi</button>
+            
+            <button type="button" class="btn  btn-login mx-2" (click)="pregledi()" *ngIf="tip=='lekar'">Pregledi</button>
+            <button type="button" class="btn  btn-login mx-2" (click)="dodajPregled()" *ngIf="tip=='lekar'">Razno</button>
+            <button type="button" class="btn  btn-login mx-2" (click)="promeniLozinku()" *ngIf="tip == 'user' || tip=='lekar'">Promeni lozinku</button>
+
+            <button type="button" class="btn   btn-login mx-2" (click)="prebaciNaLekare('naslov')" *ngIf="tip == 'menadzer' ">Nazad</button>
+            
+            
+            
+            <span class="ml-3"></span>
+            <span class="ml-3"></span>
+            <span class="ml-3 user" *ngIf="tip == 'user'  "> {{userr.firstname}} {{userr.lastname}}</span>
+            <span class="ml-3 user" *ngIf=" tip == 'lekar'" > {{lekar.firstname}} {{lekar.lastname}}</span>
+            <img class="profil-slika ml-3" src="{{userr.photo}}" alt="" *ngIf="tip == 'user'">
+            <img class="profil-slika ml-3" src="{{lekar.photo}}" alt="" *ngIf=" tip =='lekar'">
+            <button type="button" class="btn   btn-login mx-2 logout ml-5" (click)="logOut()" *ngIf="tip == 'user' || tip=='lekar'">Log Out</button>
+        </div>
+    </div>
+</nav>

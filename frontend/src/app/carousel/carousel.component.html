@@ -1,0 +1,164 @@
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA@50M1iAEQ17CSuDqnUK2+k9luXQ0fXJCJ41" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft
+    +2mJbHaEWldlv1910Yy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+    integrity="sha384-oes i62h0Lfzrys4LxRF630JCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <style>
+       
+        .carousel-item {
+            height: 61rem;
+            background: black;
+            color: white;
+            position: relative;
+            background-position: center;
+            background-size: cover;
+        }
+
+        
+
+        .overlay-image{
+            position:absolute;
+            bottom:0;
+            left:0;
+            right:0;
+            top:0;
+            background-position: center;
+            background-size: cover;
+            opacity: 0.3;
+        }
+        .carousel.carousel-fade .carousel-item {
+            display: block;
+            opacity: 0;
+            transition: opacity ease-out .5s;
+        }
+
+        .carousel.carousel-fade .carousel-item.active {
+            opacity: 1 !important;
+        }
+    </style>
+
+    <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="3"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="4"></li>
+        </ol> 
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="8000">
+                <div class="overlay-image"  style="background-image:url(/assets/bolnica1.jpg);"></div>
+                <div class="container vrsta1">
+                    <h1>Moderna oprema</h1>
+                    <p>
+                        SERENITAS je tehnički najbolje opremljena zdravstvena privatna ustanova u Srbiji i regionu. U našim ustanovama 
+                        možete uraditi sve vrste dijagnostičkih pregleda 
+                    </p>
+                    <p>ultrazvučni pregled - pomoću savremenih Simensovih aparata,    </p>
+                    <p>magnetnu rezonancu - neinvanzivan i precizan pregled koji daje konkretnu sliku o
+                        zdravlju čitavog organizma,</p>
+                    <p>mamografiju - rendgensku tehniku za rano
+                        otkrivanje oboljenja dojke i mnoge druge</p>
+                    
+                    
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="8000" >
+                <div class="overlay-image"  style="background-image:url(/assets/bolnica2.jpg);"></div>
+                <div class="container vrsta2">
+                    <h1>Pouzdanost</h1>
+                    <p>
+                        Na jednom mestu obezbeđena vam je najkvalitetnija medicinska pomoć od strane vodećih specijalista i subspecijalista iz gotovo svih oblasti savremene medicine.
+                    </p>
+                    <p>
+                        U SERENITAS-u radi više od 100 zaposlednih lekara specijalista, medicinskih sestara, tehničara, fizioterapeuta, RTG tehničara sa dugogodišnjim iskustvom.
+                    </p>
+                    <p>
+                        Među nasim ekspertima je i veliki broj kolega sa najvišim naučnim i stručnim zvanjima.
+                    </p>
+                    
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="8000">
+                <div class="overlay-image"  style="background-image:url(/assets/bolnica3.jpg);"></div>
+                <div class="container vrsta3">
+                    <h1>Nega</h1>
+                    
+                    <p> Poverenje počinje od naših zaposlenih i počiva na osloncu, pouzdanosti,
+                        partnerstvu i uspesima koje delimo sa našim klijentima. Poverenje između naše kompanije i klijenata
+                        se može videti kroz dosta zajedničkih ciljeva, uzajamnog poštovanja i ispunjavanja obaveza. 
+                    </p>
+                    <p>
+                        Zbog poverenja koje
+                        gradimo i naši ljudi i naši korisnici mogu biti potpuno sigurni znajući da ćemo uraditi onaj dodatni korak da bismo
+                        ispunili njihove zahteve. 
+                    </p>
+                    <p>
+                        Kod nas rade najbolje medicinske sestre , tehničari i fizioterapeuti sa godinama radnog staža u inostranstvu i
+                        regionu.
+                    </p>
+                    
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="8000">
+                <div class="overlay-image"  style="background-image:url(/assets/bolnica4.jpg);"></div>
+                <div class="container vrsta1">
+                    <h1>Laboratorija</h1>
+                    <p>
+                        Služba laboratorijske dijagnostike SERENITAS zdravstvenog sistema raspolaže opremom najnovije tehnologije i stručnim timom 
+                        sa dugogodišnjim iskustvom. Služba laboratorijske dijagnostike SERENITAS-a korisnicima garantuje tačnost, preciznost i pouzdanost
+                         izdatih rezultata laboratorijskih analiza. 
+                    </p>
+                    <p>
+                        Poštovanje principa dobre laboratorijske prakse u radu sa pacijentima uz 
+                         uzajamno poverenje, od momenta dolaska u laboratoriju do dobijanja traženog laboratorijskog izveštaja, 
+                         deo su svakodnevnog rada SERENITAS laboratorija.
+                    </p>
+                    
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="8000">
+                <div class="overlay-image"  style="background-image:url(/assets/bolnica5.jpg);"></div>
+                <div class="container vrsta5">
+                    <h1>Hirurgija</h1>
+                    <p>
+                        Odeljenje opšte hirurgije SERENITAS-a sa svojih osam centara: za grudnu, digestivnu, barijatrisku, vaskularnu, 
+                        spinalnu, orl, ortopedsku i urološku hirurgiju, jedna je od najvažnijih karika u pružanju sveobuhvatnih zdravstvenih
+                         usluga korisnicima.
+                    </p>
+                    <p>
+                        Uz hiruško odeljenje pacijentima na raspolaganju su i usluge poluintenzivne i intenzivne nege,
+                          kao i dva jednokrevetna i četiri dvokrevetna apartmana.
+                    </p>
+                    <p>
+                        Zasebnu jedinicu čini operacioni blok sa svoje četiri operacione sale, koje po tehnološkoj opremljenosti ne 
+                        zaostaju za najrazvijenim svetskim centrima hirurgije. Uz prvoklasnu tehničku opremljenost posebno smo ponosni na
+                        SERENITAS tim eksperata koji u poslednjih 5 godina izvodi najkopleksnije laparoskopske i klasične hirurške intervencije.
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+        <a href="#myCarousel" class="carousel-control-prev" role="button" data-bs-slide="prev">
+            <span class="sr-only">Previous</span>
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </a>
+        <a href="#myCarousel" class="carousel-control-next" role="button" data-bs-slide="next">
+            <span class="sr-only">Next</span>
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </a>
+    </div>
+
+    
+
+
+
+</body>

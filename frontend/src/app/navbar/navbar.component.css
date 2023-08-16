@@ -1,0 +1,82 @@
+.topbar {
+    border-bottom: 1px solid #E8EEE4;
+    
+  }
+  
+  .topbar .row {
+    align-items: center;
+    min-height: 36px;
+  }
+  
+
+  .btn-login{
+    background-color: #23A8D8 ;
+    color:#5AF0B4;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size:15px;
+    border: none;
+  }
+
+  .btn-login:hover{
+    background-color: #0B7FA9 ;
+    color:#5AF0B4;
+    border: none;
+  }
+  .btn-login:active{
+    background-color: #23A8D8 ;
+    color:#5AF0B4;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size:15px;
+    border: none;
+  }
+  
+  .btn-register{
+    background-color: #29e499 ;
+    color:#23A8D8;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size:15px;
+    border: none;
+  }
+
+  .btn-register:hover{
+    color:#0B7FA9;
+    border: none;
+  }
+
+  .btn-register:active{
+    background-color: #29e499;
+    color:#23A8D8;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size:15px;
+    border: none;
+  }
+
+  body{
+    background-color: #27d690;;
+  }
+
+  .profil-slika{
+    max-width: 35px;
+    
+    border-radius: 190px;
+    margin-right: 6rem;
+  }
+
+  .user{
+    font-weight:700;
+  }
+
+ 
+
+ .navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f0f0f0;
+  z-index: 100;
+ }

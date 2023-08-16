@@ -1,0 +1,51 @@
+<app-navbar></app-navbar>
+
+<body>
+
+    <div class="container mt-4 background ">
+
+        <div class="row red ">
+            <div class="col-12 col-sm-7 col-md-6 m-auto ">
+                <div class="card border-0 shadow">
+                    <div class="card-body">
+
+                        <div class="info-container">
+                            <div class="info-row">
+                                <span class="info-value">Naziv pregleda:</span>
+
+                                <input type="text" id="name" name="name" class="form-control  info-label" />
+
+                            </div>
+                            <div class="info-row">
+                                <span class="info-value">Specijalizacija:</span>
+                                <select name="specialization" id="specialization" class="form-control  info-label">
+                                    <option *ngFor="let spec of specijalizacije" [value]="spec.specialization">
+                                        {{spec.specialization}}</option>
+                                </select>
+
+                            </div>
+                            <div class="info-row">
+                                <span class="info-value">Cena:</span>
+                                <input type="text" id="price" name="price" class="form-control  info-label" />
+                            </div>
+                            <div class="info-row">
+                                <span class="info-value">Trajanje(opciono)</span>
+                                <input type="text" id="duration" name="duration" class="form-control  info-label" />
+
+                            </div>
+                            <div class="alert alert-success" role="alert" *ngIf="successBool">
+                                Uspesno ste poslali zahtev!
+                            </div>
+                            <div class="alert alert-danger" role="alert" *ngIf="errorBool">
+                                Niste lepo uneli podatke ili naziv pregleda vec postoji u sistemu!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-button">
+                        <button class="btn" (click)="posaljiZahtev()">Posalji zahtev</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

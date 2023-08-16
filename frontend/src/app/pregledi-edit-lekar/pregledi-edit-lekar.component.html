@@ -1,0 +1,51 @@
+<app-navbar></app-navbar>
+
+<body>
+    <div class="container mt-4 background ">
+
+        <div class="row red ">
+            <div class="col-12 col-sm-7 col-md-6 m-auto ">
+                <div class="card border-0 shadow">
+                    <div class="card-body">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Naziv</th>
+                                    <th>Specijalizacija</th>
+                                    <th>Cena</th>
+                                    <th>Trajanje</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let pregled of lekar.pregledi">
+                                    <td>{{pregled.name}}</td>
+                                    <td>{{pregled.specialization}}</td>
+                                    <td>{{pregled.price}}</td>
+                                    <td>{{pregled.duration}}</td>
+                                    <td><button class="btn btn-primary" (click)="izbaciPregled(pregled.name)">Izbaci</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <select name="pregledi" id="pregledi" class="form-control my-4 py-2">
+                            <option *ngFor="let pregled of pregledi" [value]="pregled.name">{{pregled.name}} -
+                                {{pregled.price}} din - {{pregled.duration}} min</option>
+                        </select>
+                        <div class="info-button">
+                            <button class="btn btn2" (click)="dodajPregled()">Dodaj pregled</button>
+                        </div>
+                        <div class="alert alert-danger" role="alert" *ngIf="errorBool">
+                            Taj pregled vec odrzavate !
+                        </div>
+                        <div class="alert alert-success" role="alert" *ngIf="successBool">
+                            Uspesno ste dodali pregled!
+                          </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<app-footer></app-footer>

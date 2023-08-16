@@ -1,0 +1,146 @@
+<app-navbar></app-navbar>
+
+<body>
+
+
+
+  <div class="container background filter-container" [ngClass]="{'show-filter': !showFilters1}">
+
+    <div class="row red">
+      <div class="col-12 col-sm-7 col-md-6 m-auto">
+        <div class="card border-0 shadow">
+          <div class="card-body">
+            <div class="img-container">
+              <img src={{lekar.photo}} class="card-img-top" alt="Profilna slika">
+            </div>
+            <div class="info-container ">
+              <div class="info-row">
+                <span class="info-value">Ime:</span>
+                <span class="info-label"> {{ lekar.firstname }}</span>
+              </div>
+              <div class="info-row">
+                <span class="info-value">Prezime:</span>
+                <span class="info-label"> {{ lekar.lastname }}</span>
+              </div>
+              <div class="info-row">
+                <span class="info-value">Specijalizacija:</span>
+                <span class="info-label"> {{ lekar.specialization }}</span>
+              </div>
+              <div class="info-row">
+                <span class="info-value">Broj licence:</span>
+                <span class="info-label"> {{ lekar.licence }}</span>
+              </div>
+              <div class="info-row">
+                <span class="info-value">Ordinacija:</span>
+                <span class="info-label"> {{ lekar.office }}</span>
+              </div>
+              <div class="info-row">
+                <span class="info-value">Telefon:</span>
+                <span class="info-label"> +381 {{ lekar.phone }}</span>
+              </div>
+              <div class="info-row">
+                <span class="info-value">Email:</span>
+                <span class="info-label"> {{ lekar.email }}</span>
+              </div>
+
+            </div>
+            <hr>
+            <div class="info-container2">
+              <h3><span class="info-label"> Pregledi:</span></h3>
+              <div class="info-roww d-flex justify-content-center">
+                
+                <div class="table-responsive mb-4  ">
+                  <table class="table table-bordered table-striped ">
+                    <thead>
+                      <tr>
+                        <th>naziv pregleda</th>
+                        <th>specijalizacija</th>
+                        <th>cena</th>
+                        <th>trajanje</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let pregled of lekar.pregledi">
+                        <td>{{pregled.name}}</td>
+                        <td>{{pregled.specialization}}</td>
+                        <td>{{pregled.price}} din</td>
+                        <td>{{pregled.duration}} min</td>
+                      </tr>
+                    </tbody>
+
+                  </table>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="info-button">
+            <button class="btn " (click)="prebaciZakazi()">Zakažite pregled</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container2 container background filter-container" [ngClass]="{'show-filter': !showFilters2}">
+
+    <div class="row red">
+      <div class="col-12 col-sm-7 col-md-6 m-auto">
+        <div class="card border-0 shadow">
+          <div class="card-body">
+
+            <div class="info-container2">
+              <span class="info-label"> Pregled</span>
+              <div class="info-roww d-flex justify-content-center">
+                <select name="pregled" id="pregled" class="form-control my-2 py-2"  [(ngModel)]="selectedPregled">
+                  <option *ngFor="let pregled of lekar.pregledi" [ngValue]="pregled" >{{pregled.name}}</option>
+                </select>
+              </div>
+     
+              <span class="info-label"> Datum</span>
+              <div class="info-roww d-flex justify-content-center">
+                <input class="form-control my-2 py-2 " type="date" id="datum" name="datum" min="YYYY-MM-DD" />
+              </div>
+
+
+              <span class="info-label"> Vreme</span>
+              <div class="skrt">
+                <div class="info-roww d-flex justify-content-center">
+                  <select name="sat" id="sat" class="form-control my-2  vreme">
+                    <option *ngFor="let broj of brojevi" value="{{broj}}">{{broj}}</option>
+                  </select>
+                  <span class="  my-2 dvotacka"> :</span>
+                  <select name="minut" id="minut" class="form-control my-2 vreme">
+                    <option *ngFor="let broj of minuti" value="{{broj}}">{{broj}}</option>
+                  </select>
+                </div>
+              </div>
+              
+
+            </div>
+            <div class="alert alert-success" role="alert" *ngIf="successAlert">
+              Uspesno ste zakazali pregled!
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="errorAlert">
+              {{errorMessage}}
+            </div>
+          </div>
+          <div class="info-button">
+            <button class="btn" (click)="zakaziPregled()">Zakaži</button>
+          </div>
+          <hr>
+          <div class="info-button ">
+            <button class="btn btn2" (click)="prebaciProfil()">Nazad</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+
+
+<app-footer></app-footer>

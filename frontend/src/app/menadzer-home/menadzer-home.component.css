@@ -1,0 +1,128 @@
+.topbar {
+    border-bottom: 1px solid #E8EEE4;
+    
+  }
+  
+  .topbar .row {
+    align-items: center;
+    min-height: 36px;
+  }
+  
+
+  .btn-login{
+    background-color: #23A8D8 ;
+    color:#5AF0B4;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size:15px;
+    border: none;
+  }
+
+  .btn-login:hover{
+    background-color: #0B7FA9 ;
+    color:#5AF0B4;
+    border: none;
+  }
+  .btn-login:active{
+    background-color: #23A8D8 ;
+    color:#5AF0B4;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size:15px;
+    border: none;
+  }
+  
+  .btn-register{
+    background-color: #5AF0B4 ;
+    color:#23A8D8;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size:15px;
+    border: none;
+  }
+
+  .btn-register:hover{
+    color:#0B7FA9;
+    border: none;
+  }
+
+  .btn-register:active{
+    background-color: #5AF0B4 ;
+    color:#23A8D8;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size:15px;
+    border: none;
+  }
+
+  body{
+    background-color: #5AF0B4;
+    background-position:center;
+    flex: content;
+    
+  }
+
+  .table-responsive {
+    max-height: 300px;
+    overflow-y: auto; 
+  }
+
+  .profilslika{
+    width:50px;
+  }
+
+  .alertovi{
+    padding-top: 10px;
+    
+  }
+
+
+  .container.filter-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    
+  }
+  
+  .container.show-filter {
+    max-height: 1000px; 
+  }
+
+  .container.filter-container2 {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    
+  }
+  
+  .container.show-filter2 {
+    max-height: 1000px; 
+  }
+
+  .container.filter-container3 {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    
+  }
+  
+  .container.show-filter3 {
+    max-height: 1000px; 
+  }
+
+ 
+  .izbrisani{
+    background-color: rgb(243, 117, 117);
+  }
+
+  .selectmenu{
+    width: 17%;
+  }
+
+  .custom-border{
+    border:6px solid #23A8D8;
+    
+    
+    border-radius: 50px;
+    
+  }

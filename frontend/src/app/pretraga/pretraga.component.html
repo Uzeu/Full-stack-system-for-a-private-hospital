@@ -1,0 +1,89 @@
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+    integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA@50M1iAEQ17CSuDqnUK2+k9luXQ0fXJCJ41" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft
+    +2mJbHaEWldlv1910Yy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+    integrity="sha384-oes i62h0Lfzrys4LxRF630JCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="lekari" id="lekari" fragment="lekari">
+
+    <div class="naslov" id="naslov">
+      <h1>Naši lekari</h1>
+    </div>
+
+    <div class="dugme">
+      <button class="btn  mb-3 skrt" id="skrol" (click)="toggleFilters()">Filteri/Pretraga</button>
+    </div>
+    <div class="container mt-4 filter-container  tekstUFilteru" [ngClass]="{'show-filter': showFilters}">
+      <div class="row filteri custom-border border-succes rounded">
+        <div class="col-md-4 mb-1">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="sort" id="sortIme" value="1" />
+            <label class="form-check-label" for="sortIme">Ime</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="sort" id="sortPrezime" value="2" />
+            <label class="form-check-label" for="sortPrezime">Prezime</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="sort" id="sortSpecijalizacija" value="3" />
+            <label class="form-check-label" for="sortSpecijalizacija">Specijalizacija</label>
+          </div>
+        </div>
+        <div class="col-md-4 mb-1">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="sortOrder" id="sortOpadajuce" value="1" />
+            <label class="form-check-label" for="sortOpadajuce">Opadajuće</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="sortOrder" id="sortRastuce" value="2" />
+            <label class="form-check-label" for="sortRastuce">Rastuće</label>
+          </div>
+        </div>
+        <div class="col-md-4 mb-1">
+          <div class="input-group mb-2">
+            <input type="text" class="form-control" id="1" placeholder="Pretraga po Imenu" />
+          </div>
+          <div class="input-group mb-2">
+            <input type="text" class="form-control" id="2" placeholder="Pretraga po Prezimenu" />
+          </div>
+          <div class="input-group mb-2">
+            <input type="text" class="form-control" id="3" placeholder="Pretraga po Specijalizaciji" />
+          </div>
+
+        </div>
+        <div class="dugme  mb-1">
+          <button class="btn btn-primary mb-3 skrt" (click)="filtriraj()">Primeni</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container listadoktora" id="skrol2">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12 kartica" *ngFor="let kartica of kartice2">
+          <div class="card mb-4">
+            <img src={{kartica.photo}} class="card-img-top" alt="Profilna slika">
+            <div class="card-body">
+              <h5 class="card-title">{{ kartica.firstname }} {{ kartica.lastname }}</h5>
+              <p class="card-text">{{ kartica.specialization }}</p>
+              <div class="btn-container" *ngIf="tip == 'user' ">
+                <button class="btn "  (click)="profilLekar(kartica.username)">Profil</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>

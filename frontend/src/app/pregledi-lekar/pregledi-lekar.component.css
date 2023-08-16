@@ -1,0 +1,156 @@
+body {
+    background-color: #5AF0B4;
+    background-position: center;
+    flex: content;
+    padding-top: 30px;
+
+}
+
+
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+
+}
+
+.thead-dark {
+    background-color: #5AF0B4;
+    color: white;
+
+}
+
+.container {
+    background-color: white;
+    border-radius: 20px;
+    width: 85%;
+}
+
+h3 {
+    color: #5AF0B4;
+}
+
+.btn-login {
+
+    border-color: #5AF0B4;
+    border-width: 1px;
+    text-align: center;
+    align-items: center;
+}
+
+
+.btn-login:hover {
+    background-color: #5AF0B4;
+
+}
+
+
+.table thead th {
+    text-align: center;
+}
+
+.table tbody td {
+    text-align: center;
+    vertical-align: center;
+    white-space:pre-wrap;
+     word-wrap:break-word;
+}
+
+
+.container.filter-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+
+}
+
+.container.show-filter {
+    max-height: 1000px;
+}
+
+.container.filter-container2 {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+
+}
+
+.container.show-filter2 {
+    max-height: 1000px;
+}
+
+.container.filter-container3 {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+
+}
+
+.container.show-filter3 {
+    max-height: 1000px;
+}
+
+
+
+.klasa {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-bottom: 20px;
+}
+
+.klasa2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-bottom: 30px;
+    padding-top: 15px;
+    color: red;
+}
+
+.klasa3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-bottom: 30px;
+}
+
+.table-responsive {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+
+.info-container2 {
+    float: center;
+    text-align: center;
+}
+
+
+.btn2 {
+
+    background-color: #5AF0B4;
+    text-align: center;
+    align-items: center;
+}
+
+
+.btn3 {
+    background-color: rgb(236, 92, 92);
+    text-align: center;
+    align-items: center;
+}
+
+.naslov-karton{
+    text-align: center;
+    align-items: center;
+}
+

@@ -1,0 +1,81 @@
+<app-navbar></app-navbar>
+
+
+<body class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
+    <div class="container ">
+        <h3 class="text-center mt-3">Moji budući pregledi!</h3>
+        
+        <div class="table-responsive2 mb-3">
+            <table class="table table-bordered ">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Naziv pregleda</th>
+                        <th style="width:10%">Datum</th>
+                        <th style="width:5%">Vreme</th>
+                        <th>Ordinacija</th>
+                        <th >Lekar</th>
+                        <th style="width:5%">Otkaži</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let zakazan of userPregledi">
+                        <td>{{zakazan.pregled}}</td>
+                        <td>{{zakazan.day}}-{{zakazan.month}}-{{zakazan.year}}</td>
+                        <td>{{zakazan.hour}} : {{zakazan.minute}}</td>
+                        <td>{{zakazan.office}}</td>
+                        <td>{{zakazan.firstnameLekar}} {{zakazan.lastnameLekar}}</td>
+                        <td> <button type="button"  class="btn  btn-login mx-2"  (click)="otkazi(zakazan)">Otkaži</button></td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+        <hr style="color: #5AF0B4; height: 10px;">
+        
+        <h3 class="text-center mt-3">Izveštaji</h3>
+        <div style="display: flex; justify-content: flex-end; padding-bottom: 10px; padding-right: 10px;">
+            <button type="button" style="margin-left: auto;" class="btn btn-login mx-2" (click)="exportPdfStranice(userIzvestaji)">Svi izveštaji PDF</button>
+          </div>
+        <div class="table-responsive mb-3">
+            <table class="table table-bordered ">
+                <thead class="thead-dark">
+                    <tr>
+                        <th style="width:10%">Datum</th>
+                        <th style="width:5%">Vreme</th>
+                        <th style="width:12%">Lekar</th>
+                        <th>Specijalizacija</th>
+                        <th style="width:17%">Razlog dolaska</th>
+                        <th style="width: 18%;" >Dijagnoza</th>
+                        <th style="width: 20%;">Terapija</th>
+                        <th style="width: 12%;"> Sledeći pregled</th>
+                        <th style="width: 10px;">PDF</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let zakazan of userIzvestaji">
+                        <td>{{zakazan.day}}-{{zakazan.month}}-{{zakazan.year}}</td>
+                        <td>{{zakazan.hour}} : {{zakazan.minute}}</td>
+                        <td>{{zakazan.firstnameLekar}} {{zakazan.lastnameLekar}}</td>
+                        <td>{{zakazan.specialization}}</td>
+                        <td>{{zakazan.reason}}</td>
+                        <td style="max-width: 250px; white-space: normal;">{{zakazan.diagnosis}}</td>
+                        <td>{{zakazan.therapy}}</td>
+                        <td>{{zakazan.dateAgain}}</td>
+                        <td> <button type="button"  class="btn  btn-login mx-2" (click)="exportPdf(zakazan)">PDF</button></td>
+
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+
+
+
+    </div>
+</body>
+
+
+<app-footer></app-footer>

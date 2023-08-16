@@ -1,0 +1,27 @@
+<body>
+
+    
+    <div class="container background">
+
+        <div class="row red">
+            <div class="col-12 col-sm-7 col-md-6 m-auto">
+                <div class="card border-0 shadow">
+                    <div class="card-body">
+                        <h2>Menadzer login</h2>    
+                        <span style="color:red;float: left;padding-bottom: 10px; ">{{message}}</span>
+                        <form action="">
+                            <input type="text" name="username" [(ngModel)]="username" class="form-control my-4 py-2"
+                                placeholder="Username" />
+                            <input type="password" name="password" [(ngModel)]="password" class="form-control my-4 py-2"
+                                placeholder="Password" />
+                            <div class="text-center mt-3">
+                                <button class="btn btn-primary" (click)="login()">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

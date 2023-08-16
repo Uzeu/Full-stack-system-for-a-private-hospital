@@ -1,0 +1,171 @@
+body {
+  background-color: #5AF0B4;
+  padding-top: 30px;
+}
+
+.background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+
+}
+
+
+
+.card-img-top {
+  justify-content: center;
+  width: 40%;
+  border-radius: 1000px;
+  border:6px solid #5AF0B4
+}
+
+
+.img-container {
+  display: flex;
+  justify-content: center;
+}
+
+.info-container {
+  float: center;
+  text-align: left;
+}
+
+.info-container2 {
+  float: center;
+  text-align: center;
+}
+
+.info-row {
+  margin-bottom: 10px;
+}
+
+.info-label {
+  font-weight: bold;
+}
+
+.info-button{
+  float: center;
+  text-align: center;
+  padding-bottom: 15px;
+}
+.btn{
+  background-color: #5AF0B4 ;
+    color:white;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size:20px;
+    border: none;
+
+}
+
+.btn:hover{
+  background-color: white;
+  color:#5AF0B4;
+  border: none;
+}
+
+.btn:active{
+  background-color: white ;
+  color:#5AF0B4;
+  font-weight: 700;
+  font-size:20px;
+  border: none;
+}
+
+.btn:focus{
+  background-color: #5AF0B4 ;
+    color:white;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size:20px;
+    border: none;
+
+}
+
+
+.table-responsive {
+  max-height: 210px;
+  overflow-y: auto; 
+}
+
+
+.table-striped tbody tr:nth-child(even) {
+  background-color: #5AF0B4; 
+}
+
+
+.table-striped tbody tr:nth-child(odd) {
+  background-color: #b7f7dd; 
+}
+
+.container.filter-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+  
+}
+
+.container.show-filter {
+  max-height: 1000px; 
+}
+
+.container.filter-container2 {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+  
+}
+
+.container.show-filter2 {
+  max-height: 1000px; 
+}
+
+
+.wrapper .content{
+  width: 100%;
+  justify-content: space-between;
+}
+
+.content .column{
+  border: 1px solid #999;
+  width:calc(100%/3-5px);
+}
+
+
+.content{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.column select{
+  outline:none;
+  border:none;
+  height:35px;
+  width: 100%;
+  font-size: 19px;
+}
+
+.container2{
+  width: 40%;
+  
+  
+}
+
+
+.vreme{
+  text-align: center;
+  width: 20%;
+  margin: 0 8px;
+}
+
+.dvotacka{
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.btn2{
+  background-color: rgb(224, 127, 127);
+}

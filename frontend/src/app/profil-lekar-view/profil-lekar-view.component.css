@@ -1,0 +1,122 @@
+body {
+    background-color: #5AF0B4;
+  }
+  
+  .background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  
+  
+  }
+  
+  
+  
+  .card-img-top {
+    justify-content: center;
+    width: 40%;
+    border-radius: 1000px;
+    border:6px solid #5AF0B4
+  }
+  
+  
+  .img-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .info-container {
+    float: left;
+    text-align: left;
+    margin-left: 20px;
+  }
+  
+  .info-row {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .info-value{
+    margin-right: 10px;
+  }
+  
+  .info-label {
+    font-weight: bold;
+    margin-right: 5px;
+    display: flex;
+    
+  }
+  
+  .info-button{
+    float: center;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+  .btn{
+    background-color: #5AF0B4 ;
+      color:white;
+      font-family: sans-serif;
+      font-weight: 700;
+      font-size:20px;
+      border: none;
+  
+  }
+  
+  .btn:hover{
+    background-color: white;
+    color:#5AF0B4;
+    border: none;
+  }
+  
+  .btn:active{
+    background-color: white ;
+    color:#5AF0B4;
+    font-weight: 700;
+    font-size:20px;
+    border: none;
+  }
+  
+  .btn:focus{
+    background-color: #5AF0B4 ;
+      color:white;
+      font-family: sans-serif;
+      font-weight: 700;
+      font-size:20px;
+      border: none;
+  
+  }
+  
+
+  .container.filter-container {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    
+  }
+  
+  .container.show-filter {
+    max-height: 1500px; 
+  }
+
+
+.file-input{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 80px;
+  padding-top: 10px;
+}
+
+.error-message{
+  color: red;
+  font-size: 14px;
+  justify-content: center;
+  display: flex;
+}
+
+.button2{
+  background-color: rgb(36, 165, 224);
+}

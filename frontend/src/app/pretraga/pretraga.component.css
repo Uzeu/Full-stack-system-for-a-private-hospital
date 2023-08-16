@@ -1,0 +1,155 @@
+.lekari{
+    margin-top: 20px;
+    background-color: #5AF0B4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+    background-image: url('/assets/animiraniLekari.png'),url('/assets/animiraniLekar2.png'),linear-gradient(#5AF0B4 ,#1d9ac7);
+    
+    background-position: right bottom,left bottom; 
+    background-repeat: no-repeat; 
+    background-size: 1100px,900px,auto;
+    padding-bottom: 40px;
+    
+}
+
+h1{
+    color:#23A8D8 ;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #0B7FA9;
+  
+}
+
+.zaposleni{
+  display: block;
+  position: relative;
+}
+
+.naslov {
+  text-align: center; 
+  padding-bottom: 60px;
+  padding-top: 60px;
+}
+
+
+.card-img-top{
+ 
+  justify-content: center;
+}
+
+
+.kartice-mreza {
+  justify-content: center;
+  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-gap: 20px; 
+}
+
+
+
+.listadoktora{
+    width: 50%;
+    padding-top: 30px;
+}
+
+.card{
+  justify-content: center; 
+  align-items: center;
+ 
+}
+
+.kartica:hover {
+  transform: scale(1.05); 
+  
+}
+
+
+.container.filter-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.container.show-filter {
+  max-height: 1000px; 
+}
+
+.dugme{
+  text-align: center; 
+  position: relative;
+}
+
+
+.filteri{
+  background-color: #5AF0B4,.1;
+  align-items: center;
+  padding-top: 10px;
+  
+}
+
+.custom-border{
+  border:6px solid #23A8D8;
+  
+  
+  border-radius: 50px;
+  
+}
+
+.background-image {
+  position: absolute;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+  z-index: -100; 
+
+}
+
+
+.tekstUFilteru{
+  color:#1b90bb;
+  font-size: 18px;
+  font-weight: bold;
+  width: 55%;
+}
+
+
+.btn-container {
+  display: flex;
+  justify-content: center; 
+  margin-top: 15px; 
+}
+
+.btn{
+  background-color: #23A8D8 ;
+    color:#5AF0B4;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size:15px;
+    border: none;
+
+}
+
+.btn:hover{
+  background-color: #0B7FA9 ;
+  color:#5AF0B4;
+  border: none;
+}
+
+.btn:active{
+  background-color: #23A8D8 ;
+  color:#5AF0B4;
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size:15px;
+  border: none;
+}

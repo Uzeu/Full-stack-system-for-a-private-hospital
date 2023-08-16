@@ -1,0 +1,80 @@
+body {
+    background-color: #5AF0B4;
+    background-position: center;
+    flex: content;
+    
+    width: 100%;
+
+}
+
+
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+
+}
+
+.thead-dark {
+    background-color: #5AF0B4;
+    color: white;
+
+}
+
+.container {
+    background-color: white;
+    border-radius: 20px;
+    width: 90%;
+}
+
+h3 {
+    color: #5AF0B4;
+}
+
+.btn-login {
+
+    border-color: #f87288;
+    border-width: 1px;
+    text-align: center;
+    align-items: center;
+}
+
+
+.btn-login:hover {
+    background-color: #f87288;
+
+}
+
+
+.table thead th {
+    text-align: center;
+}
+
+.table tbody td {
+    text-align: center;
+    vertical-align: center;
+    white-space:pre-wrap;
+     word-wrap:break-word;
+}
+
+
+
+
+.table-responsive {
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.table-responsive2 {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.info-container2 {
+    float: center;
+    text-align: center;
+}
+
+

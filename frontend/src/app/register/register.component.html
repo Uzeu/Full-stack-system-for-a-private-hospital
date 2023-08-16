@@ -1,0 +1,63 @@
+<body>
+
+
+
+    <div class="container background">
+
+        <div class="row red">
+            <div class="col-12 col-sm-7 col-md-6 m-auto">
+                <div class="card border-0 shadow">
+                    <div class="card-body">
+                        <h2>Postani član SERENITAS bolnice!</h2>
+                        <form action="" >
+                            <div class="error-message2">{{ errorMessage2 }}</div>
+                            <input type="text" id="username" name="username" [(ngModel)]="username"
+                                class="form-control my-4 py-2" placeholder="Username" />
+                         
+
+                            
+                                <input type="password" name="password" [(ngModel)]="password" id="lozinka"
+                                    class="form-control my-4 py-2" placeholder="Password" />
+
+                            
+                            <input type="password" name="password2"  id="lozinka2"
+                                    formControlName="lozinka2" class="form-control my-4 py-2" placeholder="Confirm password" />
+                           
+                            <input type="text" id="firstname" name="firstname" [(ngModel)]="firstname"
+                                class="form-control my-4 py-2" placeholder="Firstname" />
+
+                            <input type="text" id="lastname" name="lastname" [(ngModel)]="lastname"
+                                class="form-control my-4 py-2" placeholder="Lastname" />
+
+                            <input type="text" id="email" name="email" [(ngModel)]="email"
+                                class="form-control my-4 py-2" placeholder="Email" />
+                            <input type="text" id="adress" name="adress" [(ngModel)]="adress"
+                                class="form-control my-4 py-2" placeholder="Adress" />
+                            <input type="text" id="phonenumber" name="phonenumber" [(ngModel)]="phone"
+                                class="form-control my-4 py-2" placeholder="Phone number" />
+
+                            <br>
+                            <p class="text-dark">Izaberite profilnu fotografiju(opciono):</p>
+                            <input type="file" accept="image/*" class="custom-file-input" id="inputGroupFile01"
+                                aria-describedby="inputGroupFileAddon01" (change)="proveriSliku($event)">
+                            <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+
+
+                            <div class="text-center mt-3" style="padding-bottom: 10px;">
+                                <button class="btn btn-primary" type="button" (click)="register()">Sign Up</button>
+                                
+                            </div>
+                            <div class="alert alert-success" role="alert" *ngIf="alertSuccess">
+                               Uspešno ste se registrovali. Čekajte da vas administrator odobri!
+                              </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>

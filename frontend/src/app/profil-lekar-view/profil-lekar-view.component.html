@@ -1,0 +1,150 @@
+<app-navbar></app-navbar>
+
+<body>
+
+
+
+    <div class="container mt-4 background " *ngIf="!showFilters" >
+
+        <div class="row red ">
+            <div class="col-12 col-sm-7 col-md-6 m-auto ">
+                <div class="card border-0 shadow">
+                    <div class="card-body">
+                        <div class="img-container">
+                            <img src={{user.photo}} class="card-img-top" alt="Profilna slika">
+                        </div>
+                        <div class="info-container">
+                            <div class="info-row">
+                                <span class="info-value">Ime:</span>
+                                <span class="info-label"> {{ user.firstname }}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-value">Prezime:</span>
+                                <span class="info-label"> {{ user.lastname }}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-value">Telefon:</span>
+                                <span class="info-label"> +381 {{ user.phone }}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-value">Email:</span>
+                                <span class="info-label"> {{ user.email }}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-value">Adresa:</span>
+                                <span class="info-label"> {{ user.adress }}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-value">Specijalizacija:</span>
+                                <span class="info-label"> {{ user.specialization }}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-value">Licenca:</span>
+                                <span class="info-label"> {{ user.licence }}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-value">Ordinacija:</span>
+                                <span class="info-label"> {{ user.office }}</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="info-button">
+                        <button class="btn " (click)="toggleFilters()">Ažuriraj podatke</button>
+                    </div>
+                    <div class="info-button">
+                        <button class="btn " *ngIf="tip=='lekar'" (click)="editPregledi()">Ažuriraj preglede</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-4 background " *ngIf="showFilters">
+
+        <div class="row red ">
+            <div class="col-12 col-sm-7 col-md-6 m-auto ">
+                <div class="card border-0 shadow">
+                    <div class="card-body">
+                        <div class="img-container">
+                            <img src={{user.photo}} class="card-img-top" alt="Profilna slika" id="profilna-slika">
+
+                        </div>
+                        <div class="file-input">
+                            <input type="file" accept="image/*" class="custom-file-input" id="inputGroupFile01"
+                                aria-describedby="inputGroupFileAddon01" (change)="proveriSliku($event)">
+                        </div>
+                        <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+                        <div class="error-message">{{ errorMessage2 }}</div>
+                        <div class="info-container">
+                            <div class="info-row">
+                                <span class="info-value">Ime:</span>
+
+                                <input type="text" id="firstname" name="firstname" class="form-control  info-label"
+                                    value="{{user.firstname}}" />
+
+                            </div>
+                            <div class="info-row">
+                                <span class="info-value">Prezime:</span>
+                                <input type="text" id="lastname" name="lastname" class="form-control  info-label"
+                                    value="{{user.lastname}}" />
+                            </div>
+                            <div class="info-row">
+                                <span class="info-value">Telefon(+381):</span>
+                                <input type="text" id="phone" name="phone" class="form-control  info-label"
+                                    value="{{user.phone}}" />
+                            </div>
+                            <div class="info-row">
+                                <span class="info-value">Email:</span>
+                                <input type="text" id="email" name="email" *ngIf="tip=='lekar'" readonly="readonly"
+                                    class="form-control  info-label" value="{{user.email}}" />
+                                <input type="text" id="email" name="email" *ngIf="tip=='menadzer'"
+                                    class="form-control  info-label" value="{{user.email}}" />
+                            </div>
+                            <div class="info-row">
+                                <span class="info-value">Adresa:</span>
+                                <input type="text" id="adress" name="adress" class="form-control  info-label"
+                                    value="{{user.adress}}" />
+                            </div>
+                            <div class="info-row">
+                                <span class="info-value">Specijalizacija:</span>
+                                <select class="form-control my-4 py-2" name="specialization" id="specialization"  *ngIf="tip=='menadzer'">
+                                    <option value="default">--Select specialization--</option>
+                                    <option *ngFor="let specijalizacija of specijalizacije"
+                                        [value]="specijalizacija.specialization">{{specijalizacija.specialization}}
+                                    </option>
+                                </select>
+                                <input type="text"   *ngIf="tip=='lekar'" readonly="readonly"
+                                    class="form-control  info-label" value="{{user.specialization}}" />
+                            </div>
+                            <div class="info-row">
+                                <span class="info-value">Licenca:</span>
+                                <input type="text" id="licence" name="licence" class="form-control  info-label"
+                                    value="{{user.licence}}" />
+                            </div>
+                            <div class="info-row">
+                                <span class="info-value">Ordinacija:</span>
+                                <input type="text" id="office" name="office" class="form-control  info-label" *ngIf="tip=='lekar'" readonly="readonly"
+                                    value="{{user.office}}" />
+                                <input type="text" id="office" name="office" class="form-control  info-label"  *ngIf="tip=='menadzer'"
+                                    value="{{user.office}}" />
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="info-button">
+                        <button class="btn mr-5" (click)="sacuvajPromene()">Sačuvaj promene</button>
+                        <button class="btn ml-5 button2" (click)="toggleFilters()">Nazad</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+

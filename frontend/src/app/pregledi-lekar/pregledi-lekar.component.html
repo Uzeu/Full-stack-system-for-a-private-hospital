@@ -1,0 +1,157 @@
+<app-navbar></app-navbar>
+
+<body class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
+
+    <div class="container filter-container" [ngClass]="{'show-filter': !showFilters1}">
+        <h3 class="text-center mt-3">Sledeća tri pregleda</h3>
+        <div class="table-responsive mb-3">
+            <table class="table table-bordered ">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Pacijent</th>
+                        <th>Naziv pregleda</th>
+                        <th style="width:10%">Datum</th>
+                        <th style="width:5%">Vreme</th>
+                        <th style="width:5%">Trajanje</th>
+                        <th style="width: 7%;">Karton </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let zakazan of zakazani">
+                        <td>{{zakazan.firstname}} {{zakazan.lastname}}</td>
+                        <td>{{zakazan.pregled}}</td>
+                        <td>{{zakazan.day}}-{{zakazan.month}}-{{zakazan.year}}</td>
+                        <td>{{zakazan.hour}} : {{zakazan.minute}}</td>
+                        <td>{{zakazan.duration}}</td>
+                        <td> <button type="button" (click)="prebaciKarton(zakazan.user)"
+                                class="btn  btn-login mx-2">Karton</button>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container filter-container2" [ngClass]="{'show-filter2': !showFilters2}">
+        <h3 class="text-center mt-3">Pregledi bez izveštaja</h3>
+        
+        <div class="table-responsive mb-3">
+            <table class="table table-bordered ">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Pacijent</th>
+                        <th>Specijalista</th>
+                        <th>Naziv pregleda</th>
+                        <th style="width:10%">Datum</th>
+                        <th style="width:5%">Vreme</th>
+                        <th style="width:5%">Trajanje</th>
+                        <th style="width:5%">Status</th>
+                        <th style="width: 15%;">Napiši izveštaj </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let zakazan of pacijentPregledi">
+                        <td>{{zakazan.firstname}} {{zakazan.lastname}}</td>
+                        <td>{{zakazan.firstnameLekar}} {{zakazan.lastnameLekar}}</td>
+                        <td>{{zakazan.pregled}}</td>
+                        <td>{{zakazan.day}}-{{zakazan.month}}-{{zakazan.year}}</td>
+                        <td>{{zakazan.hour}} : {{zakazan.minute}}</td>
+                        <td>{{zakazan.duration}}</td>
+                        <td >{{zakazan.diagnosis}}</td>
+                        <td> <button type="button" (click)="prebaciIzvestaj(zakazan)" class="btn  btn-login mx-2"
+                                *ngIf="zakazan.lekar==lekar">Napisi izvestaj</button>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+
+        
+        <h3 class="text-center mt-3">Izveštaji</h3>
+        <div class="table-responsive mb-3">
+            <table class="table table-bordered ">
+                <thead class="thead-dark">
+                    <tr>
+                        <th style="width:10%">Datum</th>
+                        <th style="width:5%">Vreme</th>
+                        <th style="width:12%">Lekar</th>
+                        <th>Specijalizacija</th>
+                        <th style="width:17%">Razlog dolaska</th>
+                        <th style="width: 20%;" >Dijagnoza</th>
+                        <th style="width: 20%;">Terapija</th>
+                        <th>Sledeći pregled</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let zakazan of pacijentIzvestaji">
+                        <td>{{zakazan.day}}-{{zakazan.month}}-{{zakazan.year}}</td>
+                        <td>{{zakazan.hour}} : {{zakazan.minute}}</td>
+                        <td>{{zakazan.firstnameLekar}} {{zakazan.lastnameLekar}}</td>
+                        <td>{{zakazan.specialization}}</td>
+                        <td>{{zakazan.reason}}</td>
+                        <td style="max-width: 300px; white-space: normal;">{{zakazan.diagnosis}}</td>
+                        <td>{{zakazan.therapy}}</td>
+                        <td>{{zakazan.dateAgain}}</td>
+                        
+
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+
+
+        <div class="klasa"><button type="button" (click)="prebaciPregledi()"
+            class="btn  btn-login mx-2">Nazad</button></div>
+
+    </div>
+
+    <div class="container filter-container3" [ngClass]="{'show-filter3': !showFilters3}">
+        <h3 class="text-center mt-3">Izveštaj</h3>
+        <div class="row red ">
+            <div class="col-12 col-sm-9 col-md-9 m-auto ">
+
+
+                <span class="info-label"> Razlog dolaska</span>
+                <textarea class="form-control" id="razlog" rows="3"></textarea>
+
+
+
+                <span class="info-label"> Dijagnoza</span>
+                <textarea class="form-control" id="dijagnoza" rows="5"></textarea>
+
+
+
+
+                <span class="info-label"> Terapija</span>
+                <textarea class="form-control" id="terapija" rows="3"></textarea>
+
+
+
+                <span class="info-label"> Preporučeni datum sledećeg pregleda</span>
+                <input class="form-control my-2 py-2 " type="text" id="preporuceni" name="" />
+
+
+                <div class="alert alert-danger" role="alert" *ngIf="errorAlert">
+                    Sve mora biti uneto!
+                  </div>
+
+
+                <div class="klasa2"><button type="button" (click)="updateIzvestaj()" class="btn  btn2 mx-2">Pošalji izveštaj</button></div>
+                <div class="klasa3"><button type="button" (click)="vratiPregledi()" class="btn  btn3 mx-2">Nazad</button></div>
+
+
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+</body>

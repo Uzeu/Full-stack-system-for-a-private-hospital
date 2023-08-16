@@ -1,0 +1,45 @@
+h1{
+   color:#5AF0B4;
+   font-size: 50px;
+}
+
+.vrsta1{
+    position: absolute;
+    top:5%;
+    left:10%;
+    padding-bottom: 50px;
+    overflow-wrap: break-word;
+    width: 24%;
+    margin: 0 auto;
+    padding-top:50px;
+}
+
+.vrsta2{
+    position: absolute;
+    width: 24%;
+    bottom: 0;
+    right: 5%;
+    padding-bottom: 50px;
+}
+
+
+.vrsta3{
+    position: absolute;
+    width: 24%;
+    bottom: 5%;
+    right: 65%;
+    padding-bottom: 50px;
+}
+
+.vrsta5{
+    position: absolute;
+    width: 24%;
+    bottom: 20%;
+    right: 7%;
+    padding-bottom: 50px;
+}
+
+p{
+    overflow-wrap: break-word;
+    font-size: 18px;
+}
